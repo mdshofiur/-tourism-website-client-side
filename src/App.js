@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
+import AllOders from "./components/AllOders/AllOders";
+import Home from "./components/Home/Home";
+import LogIn from "./components/LogIn/LogIn";
+import MyOrders from "./components/MyOrders/MyOrders";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Error404 from "./components/Error404/Error404";
+import AddNewService from "./components/AddNewService/AddNewService";
+import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          <AuthProvider>
+          <Router>
+             <Header></Header>
+             <Switch>
+               <Route exact path="/">
+                   <Home></Home>
+               </Route>
+               <Route path="/home">
+                   <Home></Home>
+               </Route>
+               <Route path="/allorders">
+                   <AllOders></AllOders>
+               </Route>
+               <Route path="/myorders">
+                   <MyOrders></MyOrders>
+               </Route>   
+               <Route path="/AddNewService">
+                   <AddNewService></AddNewService>
+               </Route>
+               <Route path="/login">
+                   <LogIn></LogIn>
+               </Route>
+               <PrivateRoute path="/placeorder">
+                <PlaceOrder></PlaceOrder>
+               </PrivateRoute>
+               <Route path="*">
+                  <Error404></Error404>
+               </Route>
+             </Switch>
+             <Footer></Footer>
+           </Router>
+          </AuthProvider>
     </div>
   );
 }
