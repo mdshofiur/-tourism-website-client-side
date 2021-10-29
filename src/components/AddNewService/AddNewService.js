@@ -8,7 +8,7 @@ const AddNewService = () => {
 const { register, handleSubmit,reset } = useForm();
 
   const onSubmit = data => {
-    axios.post('http://localhost:5000/addnewservice',data)
+    axios.post('http://localhost:5000/bookingitem',data)
     .then(res => {
        if(res.data.insertedId) {
            alert("Sucessfully added")
@@ -21,13 +21,13 @@ const { register, handleSubmit,reset } = useForm();
 
     return (
      <div>
-       <h3>Add You New Service Here</h3>
+       <h3 className="add-title">Add You New Service Here</h3>
 
-    <form className="container" onSubmit={handleSubmit(onSubmit)}>
+    <form  className="container form-section" onSubmit={handleSubmit(onSubmit)}>
     <input placeholder="img" {...register("img")} />
     <input placeholder="title" {...register("title")} />
     <input placeholder="Place name" {...register("Place", { required: true })}/>
-    <textarea placeholder="desc" {...register("desc")} />
+    <textarea className="textarea" placeholder="desc" {...register("desc")} />
     <input placeholder="price" {...register("price")} />
     <input className="service-button" type="submit" />
   </form>

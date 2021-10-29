@@ -10,6 +10,7 @@ import AddNewService from "./components/AddNewService/AddNewService";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+import BookingItem from "./components/BookingItem/BookingItem";
 
 
 
@@ -37,8 +38,13 @@ function App() {
                </Route>
                <Route path="/login">
                    <LogIn></LogIn>
-               </Route>
-               <PrivateRoute path="/placeorder">
+               </Route> 
+
+               <Route path="/bookingitem">
+                   <BookingItem></BookingItem>
+               </Route> 
+
+               <PrivateRoute path="/placeorder/:serviceId">
                 <PlaceOrder></PlaceOrder>
                </PrivateRoute>
                <Route path="*">

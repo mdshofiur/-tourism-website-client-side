@@ -1,13 +1,14 @@
 
 import './BookingItem.css'
 import { useState ,useEffect} from 'react';
-
+import {Link} from 'react-router-dom'
 
 const BookingItem = () => {
+    
     const [service, setservice] =  useState([]);
 
      useEffect(() => {
-        fetch('http://localhost:5000/addnewservice')
+        fetch('http://localhost:5000/bookingitem')
             .then(res => res.json())
             .then(data => setservice(data));
     }, [])
@@ -31,7 +32,9 @@ const BookingItem = () => {
                     <h5 className="price text-danger">From ${service.price}</h5>
                     </div>
                     <div className="btn-section">
+                    <Link to={`/placeorder/${service._id}`}>
                     <button className="btn btn-primary">Book Now</button>
+                    </Link>
                     </div>
                    </div>
                     </div>
