@@ -22,3 +22,9 @@ form input {
     color: #fff;
     font-weight: 600;
 }
+form textarea{
+    padding: 20px 0px;
+    margin:10px;
+    width: 500px;
+    margin-left: 280px;
+}
