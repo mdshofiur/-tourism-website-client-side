@@ -2,10 +2,14 @@
 import './BookingItem.css'
 import { useState ,useEffect} from 'react';
 import {Link} from 'react-router-dom'
+import {Spinner} from 'react-bootstrap'
+import useAuth from '../../Hook/useAuth';
 
 const BookingItem = () => {
     
     const [service, setservice] =  useState([]);
+
+     const {isLoading} = useAuth();
 
      useEffect(() => {
         fetch('https://floating-springs-07848.herokuapp.com/bookingitem')
@@ -13,6 +17,15 @@ const BookingItem = () => {
             .then(data => setservice(data));
     }, [])
 
+
+    if(isLoading){
+        return (
+           <div className="spinner">
+           <Spinner animation="border" variant="primary" />
+            </div>
+        )
+
+    }
 
     return (
 

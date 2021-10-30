@@ -40,6 +40,7 @@
 .sidebar{
     padding-left: 120px;
     margin-top: 80px;
+   
 }
 .review-title{
  color: #ED8324;
@@ -48,7 +49,7 @@
 .sidebar-content{
     background-color:#328B93;
     border-radius: 10px;
-  
+    padding-bottom: 20px;
 }
 .sidebar-content h5{
      line-height: 3%;

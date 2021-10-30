@@ -3,14 +3,15 @@ import React, { useEffect, useState } from 'react';
 const AllOrders = () => {
      
     const [order,serorder] = useState([])
+    const [approve,setapprove] = useState(['pending'])
    
     useEffect(() => {
         fetch("https://floating-springs-07848.herokuapp.com/myorders/")
         .then(res => res.json())
         .then(data =>serorder(data))
-    },[])
+    },[approve])
 
-    
+       
 
     const HandleDetele = id => {
       const proceed = window.confirm("Are Sure to Delete?")
@@ -28,6 +29,24 @@ const AllOrders = () => {
         })
       }
     }
+
+    
+
+    const HandleUpdate = (id) => {
+      fetch(`https://floating-springs-07848.herokuapp.com/myorders/${id}`,{
+        method: 'PUT',
+      })
+      .then(res => res.json()
+      .then( data => {
+        if(data.modifiedCount > 0) {
+          alert('Updated Complete')
+          setapprove("Approved")
+      }
+        
+      }))
+    }
+
+
 
     return (
 
@@ -52,7 +71,7 @@ const AllOrders = () => {
             <td>{order.name}</td>
             <td>{order.email}</td>
             <td>{order.time}</td>
-            <td><button className="btn btn-primary">Pending</button></td>
+            <td><button onClick={()=> HandleUpdate(order._id)}className="btn btn-primary">{order.status}</button></td>
             <td><button  onClick={()=> HandleDetele(order._id)} className="btn btn-danger">Delete</button></td>
             </tr>
            </tbody>)

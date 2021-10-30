@@ -19,6 +19,7 @@ const OrderDetail = () => {
     },[serviceId])
 
 
+
       const { register, handleSubmit,reset} = useForm();
       const onSubmit = data =>{
         data.status = "pending";
@@ -40,8 +41,9 @@ const OrderDetail = () => {
      <div className="order_form">
      <h2 className="title-sub">Booking Submission</h2>
      <form onSubmit={handleSubmit(onSubmit)}>
+        <input className="fw-bold" defaultValue={service?.title} {...register("seleteditem")} disabled /> 
         <input placeholder="Name" {...register("name", { required: true })} />
-        <input placeholder="Email"  {...register("email",{ required: true })} />
+        <input placeholder="Email" {...register("email")} />
         <input placeholder="Phone"  {...register("phone")} />
         <input  placeholder="City" {...register("city")} />
         <input  placeholder="State/Province/Region" {...register("state")} />
@@ -58,7 +60,7 @@ const OrderDetail = () => {
             <img src={service?.img} alt="" />
              <h5 className="first-title">{service?.title}</h5>
              <h5>{service?.Place}</h5>
-            <p></p>
+            
          </div>
 
         

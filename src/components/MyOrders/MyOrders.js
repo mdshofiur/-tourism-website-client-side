@@ -31,6 +31,10 @@ const MyOrders = () => {
       }
     }
 
+     
+  
+
+
     return (
 
         <div className="container">
@@ -42,10 +46,11 @@ const MyOrders = () => {
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Data</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
        </tr>
       </thead>
-
+     
       {
         
           order.map((order,Index) =><tbody key={order._id}>
@@ -54,6 +59,7 @@ const MyOrders = () => {
             <td>{order.name}</td>
             <td>{order.email}</td>
             <td>{order.time}</td>
+            <td><button className="btn btn-danger">{order.status}</button></td>
             <td><button onClick={()=> HandleDetele(order._id)} className="btn btn-danger">Delete</button></td>
             </tr>
            </tbody>)
