@@ -30,14 +30,13 @@ const OrderDetail = () => {
 
 
 
-
     return (
         <div className="container">
      <div className="order_form">
      <h2 className="title-sub">Booking Submission</h2>
      <form onSubmit={handleSubmit(onSubmit)}>
         <input placeholder="Name" {...register("name", { required: true })} />
-        <input placeholder="Email"  {...register("email")} />
+        <input placeholder="Email"  {...register("email",{ required: true })} />
         <input placeholder="Phone"  {...register("phone")} />
         <input  placeholder="City" {...register("city")} />
         <input  placeholder="State/Province/Region" {...register("state")} />
