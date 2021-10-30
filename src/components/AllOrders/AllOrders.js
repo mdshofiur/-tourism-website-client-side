@@ -5,7 +5,7 @@ const AllOrders = () => {
     const [order,serorder] = useState([])
    
     useEffect(() => {
-        fetch("http://localhost:5000/myorders/")
+        fetch("https://floating-springs-07848.herokuapp.com/myorders/")
         .then(res => res.json())
         .then(data =>serorder(data))
     },[])
@@ -15,7 +15,7 @@ const AllOrders = () => {
     const HandleDetele = id => {
       const proceed = window.confirm("Are Sure to Delete?")
       if(proceed){
-        const url = `http://localhost:5000/myorders/${id}`;
+        const url = `https://floating-springs-07848.herokuapp.com/myorders/${id}`;
         fetch(url, {
          method: 'DELETE',
         })

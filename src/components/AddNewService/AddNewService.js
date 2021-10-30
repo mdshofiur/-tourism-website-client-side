@@ -8,7 +8,7 @@ const AddNewService = () => {
 const { register, handleSubmit,reset } = useForm();
 
   const onSubmit = data => {
-    axios.post('http://localhost:5000/bookingitem',data)
+    axios.post('https://floating-springs-07848.herokuapp.com/bookingitem',data)
     .then(res => {
        if(res.data.insertedId) {
            alert("Sucessfully added")

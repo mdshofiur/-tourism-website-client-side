@@ -13,7 +13,7 @@ const OrderDetail = () => {
     const {users} = useAuth();
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/bookingitem/${serviceId}`)
+        fetch(`https://floating-springs-07848.herokuapp.com/bookingitem/${serviceId}`)
         .then(res => res.json())
         .then(data => setservice(data) )
     },[serviceId])
@@ -24,7 +24,7 @@ const OrderDetail = () => {
         data.status = "pending";
         data.LogEmail = users?.email;
         data.time = new Date().toLocaleDateString();
-        axios.post('http://localhost:5000/myorders',data)
+        axios.post('https://floating-springs-07848.herokuapp.com/myorders',data)
         .then(res => {
            if(res.data.insertedId) {
                alert("Sucessfully added")

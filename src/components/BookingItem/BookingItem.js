@@ -8,7 +8,7 @@ const BookingItem = () => {
     const [service, setservice] =  useState([]);
 
      useEffect(() => {
-        fetch('http://localhost:5000/bookingitem')
+        fetch('https://floating-springs-07848.herokuapp.com/bookingitem')
             .then(res => res.json())
             .then(data => setservice(data));
     }, [])

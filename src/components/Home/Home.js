@@ -1,7 +1,7 @@
 import React from 'react';
 import {Carousel} from 'react-bootstrap'
 import BookingItem from '../BookingItem/BookingItem';
-import {Container,Col,Card,Row} from 'react-bootstrap'
+import {Container,Col,Card,Row,Button} from 'react-bootstrap'
 import './Home.css'
 import { RiUserStarLine } from 'react-icons/ri';
 import { RiUserHeartLine } from 'react-icons/ri';
@@ -47,47 +47,83 @@ const Home = () => {
 
          {/*  Item Section */}
 
-
-
-      <div className="container">
-
-            <div className="mb-5 mt-5">
-            <h4>TRAVIO SPECIALS</h4>
-            <h1>Why Travel with TourTrip?</h1>
-            </div>
-
-            <RiUserStarLine></RiUserStarLine>
-            <RiUserHeartLine></RiUserHeartLine>
-            <HiUsers></HiUsers>
-            <RiUserVoiceLine></RiUserVoiceLine>
-
-            <div className="travel">
-                 
-             <div className="one">
-                 <img src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-1.jpg" alt="" />
-                  <h5>2000+ Our Worldwide Guide</h5>
-             </div>
             
-             <div className="one">
-                 <img src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-2.jpg" alt="" />
-                  <h5>2000+ Our Worldwide Guide</h5>
-             </div>
-
-             <div className="one">
-                 <img src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-3.jpg" alt="" />
-                  <h5>2000+ Our Worldwide Guide</h5>
-             </div>
+            <div className="TourTrip">
+            <h4 className="title-one">TOURTRIP SPECIALS</h4>
+            <h1 className="title-two">Why Travel with TourTrip?</h1>
+            </div>
 
 
-             <div className="one">
-                 <img src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-4.jpg" alt="" />
-                  <h5>2000+ Our Worldwide Guide</h5>
-             </div>
+       <div className="container">
+        
+       <Row xs={1} md={3} className="g-4">
+ 
+    <Col>
+      <Card>
+        <Card.Img variant="top" src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-1.jpg" />
+        <Card.Body>
+        <div className="icons"><RiUserVoiceLine></RiUserVoiceLine></div>
+          <Card.Title className="one">2000+ Our Worldwide Guide</Card.Title>
+          
+          <Card.Text>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+
+    
+    <Col>
+      <Card>
+        <Card.Img variant="top" src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-2.jpg" />
+        <Card.Body>
+          <Card.Title>100% Trusted Tour Agency</Card.Title>
+          <div className="icons">  <HiUsers></HiUsers></div>
+          <Card.Text>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+
+    
+    <Col>
+      <Card>
+        <Card.Img variant="top" src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-3.jpg" />
+        <Card.Body>
+          <Card.Title>12+ Years of Travel Experience</Card.Title>
+          <div className="icons">  <RiUserHeartLine></RiUserHeartLine></div>
+          <Card.Text>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+
+        
+    <Col>
+      <Card>
+        <Card.Img variant="top" src="https://smartdemowp.com/travio/wp-content/uploads/2021/02/feature-4.jpg" />
+        <Card.Body>
+          <Card.Title>98% of Our Travelers are Happy</Card.Title>
+       
+          <div className="icons"> <RiUserStarLine></RiUserStarLine></div>
+          <Card.Text>
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
+
+</Row>
+
 
 
             </div>
-      </div>
-
 
 
 
@@ -107,6 +143,7 @@ const Home = () => {
 <Card.Title>The Surfing Man Will Blow Your Mind</Card.Title>
 <Card.Text>
 <p className="text-start"> A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone.</p>
+<button className="btn btn-primary ms-5 ps-5 pe-5">Learn More...</button>
 </Card.Text>
 </Card.Body>
 </Card>
@@ -119,6 +156,7 @@ const Home = () => {
 <Card.Title>Separated they live in Bookmarksgrove</Card.Title>
 <Card.Text>
 <p className="text-start"> that I neglect my talents. I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now..</p>
+<button className="btn btn-primary ms-5 ps-5 pe-5">Learn More...</button>
 </Card.Text>
 </Card.Body>
 </Card>
@@ -131,6 +169,7 @@ const Home = () => {
 <Card.Title>Pityful a rethoric question ran</Card.Title>
 <Card.Text>
 <p className="text-start"> like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created artist than now. </p>
+<button className="btn btn-primary ms-5 ps-5 pe-5">Learn More...</button>
 </Card.Text>
 </Card.Body>
 </Card>
@@ -143,6 +182,7 @@ const Home = () => {
 <Card.Title>Change your place and get the fresh air</Card.Title>
 <Card.Text>
 <p  className="text-start">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone</p>
+<button className="btn btn-primary ms-5 ps-5 pe-5">Learn More...</button>
 </Card.Text>
 </Card.Body>
 </Card>
