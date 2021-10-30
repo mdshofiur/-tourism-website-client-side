@@ -3,10 +3,14 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import './PlaceOrder.css';
 import axios from 'axios';
+import useAuth from '../../Hook/useAuth';
+
+
 const OrderDetail = () => {
 
     const { serviceId } = useParams();
-    const [service,setservice] = useState({})
+    const [service,setservice] = useState({});
+    const {users} = useAuth();
 
     useEffect(()=>{
         fetch(`http://localhost:5000/bookingitem/${serviceId}`)
@@ -18,6 +22,7 @@ const OrderDetail = () => {
       const { register, handleSubmit,reset} = useForm();
       const onSubmit = data =>{
         data.status = "pending";
+        data.LogEmail = users?.email;
         data.time = new Date().toLocaleDateString();
         axios.post('http://localhost:5000/myorders',data)
         .then(res => {

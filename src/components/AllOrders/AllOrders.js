@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../Hook/useAuth';
 
-const MyOrders = () => {
+const AllOrders = () => {
      
     const [order,serorder] = useState([])
-    const {users} = useAuth();
-
+   
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/${users.email}`)
+        fetch("http://localhost:5000/myorders/")
         .then(res => res.json())
         .then(data =>serorder(data))
-    },[users.email])
+    },[])
 
     
 
@@ -42,19 +40,20 @@ const MyOrders = () => {
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Data</th>
+      <th scope="col">Status</th>
       <th scope="col">Action</th>
        </tr>
       </thead>
 
       {
-        
           order.map((order,Index) =><tbody key={order._id}>
             <tr>
             <th scope="row">{Index}</th>
             <td>{order.name}</td>
             <td>{order.email}</td>
             <td>{order.time}</td>
-            <td><button onClick={()=> HandleDetele(order._id)} className="btn btn-danger">Delete</button></td>
+            <td><button className="btn btn-primary">Pending</button></td>
+            <td><button  onClick={()=> HandleDetele(order._id)} className="btn btn-danger">Delete</button></td>
             </tr>
            </tbody>)
       }
@@ -63,4 +62,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default AllOrders;

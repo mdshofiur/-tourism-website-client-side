@@ -1,5 +1,4 @@
 import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import AllOders from "./components/AllOders/AllOders";
 import Home from "./components/Home/Home";
 import LogIn from "./components/LogIn/LogIn";
 import MyOrders from "./components/MyOrders/MyOrders";
@@ -10,7 +9,7 @@ import AddNewService from "./components/AddNewService/AddNewService";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
-import BookingItem from "./components/BookingItem/BookingItem";
+import AllOrders from "./components/AllOrders/AllOrders";
 
 
 
@@ -28,7 +27,7 @@ function App() {
                    <Home></Home>
                </Route>
                <Route path="/allorders">
-                   <AllOders></AllOders>
+                   <AllOrders></AllOrders>
                </Route>
                <Route path="/myorders">
                    <MyOrders></MyOrders>
