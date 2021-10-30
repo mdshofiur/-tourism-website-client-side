@@ -27,8 +27,8 @@
     margin-left:100px;
     margin-top:5px;
 }
-.spinner{
+.home-spinner{
     position: absolute;
     bottom: 300px;
- 
+    left:600px;
 }

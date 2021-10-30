@@ -20,7 +20,7 @@ const BookingItem = () => {
 
     if(isLoading){
         return (
-           <div className="spinner">
+           <div className="home-spinner">
            <Spinner animation="border" variant="primary" />
             </div>
         )

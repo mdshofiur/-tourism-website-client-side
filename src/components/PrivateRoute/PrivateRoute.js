@@ -10,7 +10,7 @@ const PrivateRoute = ({children, ...rest}) => {
 
     if(isLoading){
         return (
-           <div className="spinner">
+           <div className="spinner-private">
            <Spinner animation="border" variant="info" />
             </div>
         )
