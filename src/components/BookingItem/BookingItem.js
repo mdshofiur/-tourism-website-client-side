@@ -28,8 +28,10 @@ const BookingItem = () => {
     }
 
     return (
-
+         
+        
         <div className="container booking">
+         
           {
               service.map(service => <div key={service._id}>
                  

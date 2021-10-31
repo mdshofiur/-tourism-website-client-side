@@ -36,7 +36,11 @@ const Home = () => {
           </Carousel.Item>
           </Carousel>
          </div>
+     
 
+         <div className="container mt-5">
+             <h1 className="ms-3 text-success">Our Popular Tours</h1>
+         </div>
 
      {/* Booking Item Section */}
 
