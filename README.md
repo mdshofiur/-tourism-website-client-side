@@ -1,9 +1,9 @@
 
 Website Name: TourTrip.com
 
-Github Private Client-Side Rep Link: https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-mdshofiur
+Github Private Client-Side Rep Link: https://github.com/mdshofiur/-tourism-website-client-side
 
-Github Private Server-Side Rep Link: https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-mdshofiur
+Github Private Server-Side Rep Link: https://github.com/mdshofiur/tourism-website-server-side
 
 Firebase Client-side Live Link: https://assignement-11.web.app/
 
